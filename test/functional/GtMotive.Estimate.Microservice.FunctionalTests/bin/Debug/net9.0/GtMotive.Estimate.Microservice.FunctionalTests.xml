@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GtMotive.Estimate.Microservice.FunctionalTests</name>
+    </assembly>
+    <members>
+        <member name="T:GtMotive.Estimate.Microservice.FunctionalTests.Vehicle.Fakes.InMemoryVehicleRepository">
+            <summary>
+            In-memory implementation of IVehicleRepository for integration tests.
+            </summary>
+        </member>
+    </members>
+</doc>

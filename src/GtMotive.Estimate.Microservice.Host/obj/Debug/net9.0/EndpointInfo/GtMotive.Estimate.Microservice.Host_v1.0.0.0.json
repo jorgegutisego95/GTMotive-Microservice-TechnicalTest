@@ -1,0 +1,193 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "GtMotive.Estimate.Microservice.Host API",
+    "version": "v1.0.0.0"
+  },
+  "paths": {
+    "/api/vehicle": {
+      "post": {
+        "tags": [
+          "Vehicle"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vehicleRental/rent": {
+      "post": {
+        "tags": [
+          "VehicleRental"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vehicleRental/return": {
+      "post": {
+        "tags": [
+          "VehicleRental"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vehicleRental/getAvailables": {
+      "get": {
+        "tags": [
+          "VehicleRental"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto": {
+        "required": [
+          "manufactureDate",
+          "model",
+          "plate"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "nullable": true
+          },
+          "plate": {
+            "type": "string",
+            "nullable": true
+          },
+          "manufactureDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto": {
+        "required": [
+          "dni",
+          "vehicleId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "vehicleId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "dni": {
+            "type": "string",
+            "nullable": true
+          },
+          "rentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "returnDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://identity.mygtmotive.com/connect/authorize",
+            "tokenUrl": "https://identity.mygtmotive.com/connect/token",
+            "scopes": {
+              "estimate-public-scope": "estimate-api"
+            }
+          }
+        }
+      }
+    }
+  }
+}

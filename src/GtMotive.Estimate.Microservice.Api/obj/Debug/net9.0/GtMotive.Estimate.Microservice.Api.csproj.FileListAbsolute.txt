@@ -1,0 +1,31 @@
+C:\Users\jgutierrez\OneDrive - knowmad mood\Escritorio\GTMotive\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.csproj.AssemblyReference.cache
+C:\Users\jgutierrez\OneDrive - knowmad mood\Escritorio\GTMotive\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jgutierrez\OneDrive - knowmad mood\Escritorio\GTMotive\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.AssemblyInfoInputs.cache
+C:\Users\jgutierrez\OneDrive - knowmad mood\Escritorio\GTMotive\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.AssemblyInfo.cs
+C:\Users\jgutierrez\OneDrive - knowmad mood\Escritorio\GTMotive\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.csproj.CoreCompileInputs.cache
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\Controllers\VehicleController.cs
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\Controllers\VehicleRentalController.cs
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Api.deps.json
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Api.dll
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Api.pdb
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Api.xml
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.ApplicationCore.dll
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Domain.dll
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Infrastructure.dll
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.ApplicationCore.pdb
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.ApplicationCore.xml
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Infrastructure.pdb
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Infrastructure.xml
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Domain.pdb
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\bin\Debug\net9.0\GtMotive.Estimate.Microservice.Domain.xml
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.csproj.AssemblyReference.cache
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.AssemblyInfoInputs.cache
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.AssemblyInfo.cs
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.csproj.CoreCompileInputs.cache
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.21625816.Up2Date
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.dll
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\refint\GtMotive.Estimate.Microservice.Api.dll
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.xml
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\GtMotive.Estimate.Microservice.Api.pdb
+C:\PruebaTecnicaNET\hexagonal-architecture-doc-main\src\GtMotive.Estimate.Microservice.Api\obj\Debug\net9.0\ref\GtMotive.Estimate.Microservice.Api.dll

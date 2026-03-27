@@ -1,0 +1,7 @@
+{
+  "GtMotive.Estimate.Microservice.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\PruebaTecnicaNET\\hexagonal-architecture-doc-main\\src\\GtMotive.Estimate.Microservice.Api",
+  "GtMotive.Estimate.Microservice.ApplicationCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\PruebaTecnicaNET\\hexagonal-architecture-doc-main\\src\\GtMotive.Estimate.Microservice.ApplicationCore",
+  "GtMotive.Estimate.Microservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\PruebaTecnicaNET\\hexagonal-architecture-doc-main\\src\\GtMotive.Estimate.Microservice.Domain",
+  "GtMotive.Estimate.Microservice.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\PruebaTecnicaNET\\hexagonal-architecture-doc-main\\src\\GtMotive.Estimate.Microservice.Host",
+  "GtMotive.Estimate.Microservice.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\PruebaTecnicaNET\\hexagonal-architecture-doc-main\\src\\GtMotive.Estimate.Microservice.Infrastructure"
+}

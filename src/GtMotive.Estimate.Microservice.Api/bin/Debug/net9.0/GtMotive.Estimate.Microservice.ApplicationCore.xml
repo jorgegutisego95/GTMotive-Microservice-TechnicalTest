@@ -1,0 +1,464 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GtMotive.Estimate.Microservice.ApplicationCore</name>
+    </assembly>
+    <members>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.ApplicationConfiguration">
+            <summary>
+            Adds Use Cases classes.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.ApplicationConfiguration.AddUseCases(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Use Cases to the ServiceCollection.
+            </summary>
+            <param name="services">Service Collection.</param>
+            <returns>The modified instance.</returns>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto">
+            <summary>
+            Data Transfer Object (DTO) representing a vehicle.
+            Used to expose vehicle information from the ApplicationCore layer
+            to the API or microservice clients.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto.Id">
+            <summary>
+            Gets or sets the Vehicle Id.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto.Model">
+            <summary>
+            Gets or sets the Vehicle Model.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto.Plate">
+            <summary>
+            Gets or sets the Vehicle Plate.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto.ManufactureDate">
+            <summary>
+            Gets or sets the Vehicle Manufacture Date.
+            Only vehicles with a maximum age of 5 years are allowed.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto">
+            <summary>
+            Data Transfer Object (DTO) to rent or return a vehicle.
+            Contains both the vehicle identifier and the user's DNI.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto.Id">
+            <summary>
+            Gets or sets the unique rental identifier.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto.VehicleId">
+            <summary>
+            Gets or sets the vehicle being rented.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto.Dni">
+            <summary>
+            Gets or sets the user identifier (DNI) renting the vehicle.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto.RentDate">
+            <summary>
+            Gets or sets the date and time when the vehicle was rented.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto.ReturnDate">
+            <summary>
+            Gets or sets the date and time when the vehicle was returned. Null by default, indicating the vehicle is still rented.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle">
+            <summary>
+            Represents a vehicle in the fleet.
+            This entity is used internally in the ApplicationCore layer to manage vehicle data.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle.Id">
+            <summary>
+            Gets or sets the unique identifier of the vehicle.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle.Model">
+            <summary>
+            Gets or sets the vehicle model.
+            Example: "Toyota Corolla".
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle.Plate">
+            <summary>
+            Gets or sets the vehicle license plate.
+            Example: "ABC-1234".
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle.ManufactureDate">
+            <summary>
+            Gets or sets the manufacture date of the vehicle.
+            Only vehicles up to 5 years old are allowed in the fleet.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental">
+            <summary>
+            Represents a rental of a vehicle by a user (DNI).
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental.Id">
+            <summary>
+            Gets or sets the unique rental identifier.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental.VehicleId">
+            <summary>
+            Gets or sets the vehicle being rented.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental.Dni">
+            <summary>
+            Gets or sets the user identifier (DNI) renting the vehicle.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental.RentDate">
+            <summary>
+            Gets or sets the date and time when the vehicle was rented.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental.ReturnDate">
+            <summary>
+            Gets or sets the date and time when the vehicle was returned. Null by default, indicating the vehicle is still rented.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IOutputPortNotFound">
+            <summary>
+            Interface to define the Not Found Output Port.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IOutputPortNotFound.NotFoundHandle(System.String)">
+            <summary>
+            Informs the resource was not found.
+            </summary>
+            <param name="message">Text description.</param>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IOutputPortStandard`1">
+            <summary>
+            Interface to define the Standard Output Port.
+            </summary>
+            <typeparam name="TUseCaseOutput">Tyoe of the use case response dto.</typeparam>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IOutputPortStandard`1.StandardHandle(`0)">
+            <summary>
+            Writes to the Standard Output.
+            </summary>
+            <param name="response">The Output Port Message.</param>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IUseCase`1">
+            <summary>
+            Interface for the handler of an use case.
+            </summary>
+            <typeparam name="TUseCaseInput">Tyoe of the input message.</typeparam>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IUseCase`1.Execute(`0)">
+            <summary>
+            Executes the Use Case.
+            </summary>
+            <param name="input">Input Message.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IUseCaseInput">
+            <summary>
+            Input Message interface marker.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.UseCases.IUseCaseOutput">
+            <summary>
+            Output Message interface marker.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand">
+            <summary>
+            Command to request renting a vehicle.
+            Contains the identifier of the vehicle to rent and the user's DNI.
+            This command is handled by a MediatR handler that will process the rental
+            and return a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the created rental.
+            </summary>
+            <param name="VehicleId">The unique identifier of the vehicle to be rented.</param>
+            <param name="Dni">The DNI of the user who wants to rent the vehicle.</param>
+            <param name="RentDate">The Rent Date of the vehicle, if null will be the currentDate.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand.#ctor(System.Guid,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Command to request renting a vehicle.
+            Contains the identifier of the vehicle to rent and the user's DNI.
+            This command is handled by a MediatR handler that will process the rental
+            and return a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the created rental.
+            </summary>
+            <param name="VehicleId">The unique identifier of the vehicle to be rented.</param>
+            <param name="Dni">The DNI of the user who wants to rent the vehicle.</param>
+            <param name="RentDate">The Rent Date of the vehicle, if null will be the currentDate.</param>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand.VehicleId">
+            <summary>The unique identifier of the vehicle to be rented.</summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand.Dni">
+            <summary>The DNI of the user who wants to rent the vehicle.</summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand.RentDate">
+            <summary>The Rent Date of the vehicle, if null will be the currentDate.</summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand">
+            <summary>
+            Command to request returning a rented vehicle.
+            Contains the identifier of the vehicle to return and the user's DNI.
+            This command is handled by a MediatR handler that will process the return
+            and return a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the updated rental.
+            </summary>
+            <param name="VehicleId">The unique identifier of the vehicle being returned.</param>
+            <param name="Dni">The DNI of the user who is returning the vehicle.</param>
+            <param name="ReturnDate">The Return Date of the vehicle, if null will be the currentDate.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand.#ctor(System.Guid,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Command to request returning a rented vehicle.
+            Contains the identifier of the vehicle to return and the user's DNI.
+            This command is handled by a MediatR handler that will process the return
+            and return a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the updated rental.
+            </summary>
+            <param name="VehicleId">The unique identifier of the vehicle being returned.</param>
+            <param name="Dni">The DNI of the user who is returning the vehicle.</param>
+            <param name="ReturnDate">The Return Date of the vehicle, if null will be the currentDate.</param>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand.VehicleId">
+            <summary>The unique identifier of the vehicle being returned.</summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand.Dni">
+            <summary>The DNI of the user who is returning the vehicle.</summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand.ReturnDate">
+            <summary>The Return Date of the vehicle, if null will be the currentDate.</summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.GetAvailableVehiclesHandler">
+            <summary>
+            Handler responsible for processing the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Queries.GetAvailableVehiclesQuery"/>.
+            Retrieves all vehicles that are currently not rented.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.GetAvailableVehiclesHandler.#ctor(GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository,GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository)">
+            <summary>
+            Handler responsible for processing the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Queries.GetAvailableVehiclesQuery"/>.
+            Retrieves all vehicles that are currently not rented.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.GetAvailableVehiclesHandler.Handle(GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Queries.GetAvailableVehiclesQuery,System.Threading.CancellationToken)">
+            <summary>
+            Handles the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Queries.GetAvailableVehiclesQuery"/> request and returns
+            a list of <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto"/> representing vehicles available for renting.
+            </summary>
+            <param name="request">The query request. No additional parameters in this case.</param>
+            <param name="cancellationToken">Token to cancel the asynchronous operation if needed.</param>
+            <returns>A collection of <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto"/> representing available vehicles.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.RentVehicleHandler">
+            <summary>
+            Handler responsible for processing <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand"/>.
+            Creates a new rental record in the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository"/>
+            and returns a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the rented vehicle.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.RentVehicleHandler.#ctor(GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository)">
+            <summary>
+            Handler responsible for processing <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand"/>.
+            Creates a new rental record in the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository"/>
+            and returns a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the rented vehicle.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.RentVehicleHandler.Handle(GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand,System.Threading.CancellationToken)">
+            <summary>
+            Handles the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.RentVehicleCommand"/> request.
+            Creates a new rental with the provided VehicleId and DNI, sets the RentDate,
+            stores it in the repository, and returns the corresponding <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/>.
+            </summary>
+            <param name="request">The command containing VehicleId and user DNI.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>A <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the newly created rental.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.ReturnVehicleHandler">
+            <summary>
+            Handler responsible for processing <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand"/>.
+            Updates an existing rental record in the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository"/>
+            and returns a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the rented vehicle.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.ReturnVehicleHandler.#ctor(GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository)">
+            <summary>
+            Handler responsible for processing <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand"/>.
+            Updates an existing rental record in the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository"/>
+            and returns a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the rented vehicle.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Handlers.ReturnVehicleHandler.Handle(GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand,System.Threading.CancellationToken)">
+            <summary>
+            Handles the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Commands.ReturnVehicleCommand"/> request.
+            Updathes the existing rental with the provided VehicleId and DNI, and sets the ReturnDate,
+            stores it in the repository, and returns the corresponding <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/>.
+            </summary>
+            <param name="request">The command containing VehicleId and user DNI.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>A <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleRentalDto"/> representing the rental updated.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Queries.GetAvailableVehiclesQuery">
+            <summary>
+            Query to get all available vehicles in the fleet.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository">
+            <summary>
+            Repository interface to manage rental vehicles in the fleet.
+            Defines the operations required by the application core to manage vehicle rentals.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository.GetAllRentedVehiclesAsync">
+            <summary>
+            Gets all rented vehicles.
+            </summary>
+            <returns>A collection of <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental"/> instances.</returns>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository.AddAsync(GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental)">
+            <summary>
+            Adds a new vehicle rental to the repository.
+            </summary>
+            <param name="vehicleRental">The <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental"/> to add.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository.UpdateAsync(GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental)">
+            <summary>
+            Updates an existing vehicle rental to the repository.
+            </summary>
+            <param name="vehicleRental">The <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental"/> to update.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository.HasAnExistingRental(System.String)">
+            <summary>
+            Determines whether there is an existing active rental for the provided identity.
+            </summary>
+            <param name="dni">The identity number (DNI) of the customer to check.</param>
+            <returns>
+            A task that resolves to <c>true</c> if there is at least one active rental associated with the given DNI;
+            otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository.GetRentalByDniAndVehicleId(System.Guid,System.String)">
+            <summary>
+            Retrieves a specific rental by vehicle identifier and customer DNI.
+            </summary>
+            <param name="vehicleId">Unique identifier of the vehicle (<see cref="T:System.Guid"/>).</param>
+            <param name="dni">DNI of the customer associated with the rental.</param>
+            <returns>
+            A task that resolves to the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.VehicleRental"/> if found; otherwise <c>null</c>.
+            </returns>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand">
+            <summary>
+            Command to create a new vehicle in the fleet.
+            This command is handled by MediatR and returns a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto"/> after creation.
+            </summary>
+            <param name="Model">Gets or sets the model of the vehicle. Example: "Toyota Corolla".</param>
+            <param name="Plate">Gets or sets the license plate of the vehicle. Example: "ABC-1234".</param>
+            <param name="ManufactureDate">Gets or sets the manufacture date of the vehicle. Only vehicles up to 5 years old are allowed.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand.#ctor(System.String,System.String,System.DateTime)">
+            <summary>
+            Command to create a new vehicle in the fleet.
+            This command is handled by MediatR and returns a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto"/> after creation.
+            </summary>
+            <param name="Model">Gets or sets the model of the vehicle. Example: "Toyota Corolla".</param>
+            <param name="Plate">Gets or sets the license plate of the vehicle. Example: "ABC-1234".</param>
+            <param name="ManufactureDate">Gets or sets the manufacture date of the vehicle. Only vehicles up to 5 years old are allowed.</param>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand.Model">
+            <summary>Gets or sets the model of the vehicle. Example: "Toyota Corolla".</summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand.Plate">
+            <summary>Gets or sets the license plate of the vehicle. Example: "ABC-1234".</summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand.ManufactureDate">
+            <summary>Gets or sets the manufacture date of the vehicle. Only vehicles up to 5 years old are allowed.</summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Handlers.CreateVehicleHandler">
+            <summary>
+            Handles the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand"/> to create a new vehicle in the fleet.
+            This handler is responsible for validating the command, creating the Vehicle entity,
+            and returning a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto"/> with the created vehicle's details.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Handlers.CreateVehicleHandler"/> class.
+            </remarks>
+            <param name="vehicleRepository">Gets or sets the vehicle repository used to persist vehicles.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Handlers.CreateVehicleHandler.#ctor(GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository)">
+            <summary>
+            Handles the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand"/> to create a new vehicle in the fleet.
+            This handler is responsible for validating the command, creating the Vehicle entity,
+            and returning a <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto"/> with the created vehicle's details.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Handlers.CreateVehicleHandler"/> class.
+            </remarks>
+            <param name="vehicleRepository">Gets or sets the vehicle repository used to persist vehicles.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Handlers.CreateVehicleHandler.Handle(GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand,System.Threading.CancellationToken)">
+            <summary>
+            Handles the <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Commands.CreateVehicleCommand"/> request.
+            </summary>
+            <param name="request">Gets or sets the command containing the vehicle data to create.</param>
+            <param name="cancellationToken">Gets or sets the cancellation token.</param>
+            <returns>
+            A <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Dtos.VehicleDto"/> containing the information of the newly created vehicle.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the vehicle manufacture date is more than 5 years old.
+            </exception>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository">
+            <summary>
+            Repository interface to manage vehicles in the fleet.
+            Defines the operations required by the application core to manage vehicles.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Gets a vehicle by its unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the vehicle.</param>
+            <returns>The <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle"/> if found; otherwise, null.</returns>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository.AddAsync(GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle)">
+            <summary>
+            Adds a new vehicle to the repository.
+            </summary>
+            <param name="vehicle">The <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle"/> to add.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository.UpdateAsync(GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle)">
+            <summary>
+            Updates an existing vehicle in the repository.
+            </summary>
+            <param name="vehicle">The <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle"/> to update.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository.GetAllAsync">
+            <summary>
+            Gets all vehicles.
+            </summary>
+            <returns>A collection of <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Entities.Vehicle"/> instances.</returns>
+        </member>
+    </members>
+</doc>

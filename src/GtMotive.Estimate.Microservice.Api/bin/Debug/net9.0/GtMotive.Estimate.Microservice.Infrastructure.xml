@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GtMotive.Estimate.Microservice.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="T:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1">
+            <summary>
+            Class to implement the IAppLogger interface.
+            </summary>
+            <typeparam name="T">Type of object.</typeparam>
+        </member>
+        <member name="F:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1._logger">
+            <summary>
+            Logger's interface.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1"/> class.
+            </summary>
+            <param name="loggerFactory">Type used to configure the logging system and create instances of ILogger.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1.LogWarning(System.String,System.Object[])">
+            <summary>
+            Formats and writes a warning log message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="args">Array that contains zero or more objects to format.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1.LogInformation(System.String,System.Object[])">
+            <summary>
+            Formats and writes an informational log message.
+            </summary>
+            <param name="message">A message.</param>
+            <param name="args">Array that contains zero or more objects to format.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1.LogError(System.Exception,System.String,System.Object[])">
+            <summary>
+            Formats and writes an error log message.
+            </summary>
+            <param name="exception">A exception.</param>
+            <param name="message">A message.</param>
+            <param name="args">Array that contains zero or more objects to format.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Infrastructure.Logging.LoggerAdapter`1.LogDebug(System.String,System.Object[])">
+            <summary>
+            Formats and writes a debug log message.
+            </summary>
+            <param name="message">A message.</param>
+            <param name="args">Array that contains zero or more objects to format.</param>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Infrastructure.Vehicles.Repositories.MongoVehicleRentalRepository">
+            <summary>
+            In-memory implementation of <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.VehicleRental.Repositories.IVehicleRentalRepository"/>.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Infrastructure.Vehicles.Repositories.MongoVehicleRentalRepository.#ctor(GtMotive.Estimate.Microservice.Infrastructure.MongoDb.MongoService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.Infrastructure.Vehicles.Repositories.MongoVehicleRentalRepository"/> class.
+            </summary>
+            <param name="mongoService">The <see cref="T:GtMotive.Estimate.Microservice.Infrastructure.MongoDb.MongoService"/> used to access the database.</param>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Infrastructure.Vehicles.Repositories.MongoVehicleRepository">
+            <summary>
+            In-memory implementation of <see cref="T:GtMotive.Estimate.Microservice.ApplicationCore.Vehicles.Repositories.IVehicleRepository"/>.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Infrastructure.Vehicles.Repositories.MongoVehicleRepository.#ctor(GtMotive.Estimate.Microservice.Infrastructure.MongoDb.MongoService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.Infrastructure.Vehicles.Repositories.MongoVehicleRepository"/> class.
+            </summary>
+            <param name="mongoService">The <see cref="T:GtMotive.Estimate.Microservice.Infrastructure.MongoDb.MongoService"/> used to access the database.</param>
+        </member>
+    </members>
+</doc>

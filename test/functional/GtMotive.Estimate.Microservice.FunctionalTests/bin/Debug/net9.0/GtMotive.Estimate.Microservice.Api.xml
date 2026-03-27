@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GtMotive.Estimate.Microservice.Api</name>
+    </assembly>
+    <members>
+        <member name="T:GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto">
+            <summary>
+            Data Transfer Object (DTO) representing a vehicle.
+            Used to expose vehicle information from the ApplicationCore layer
+            to the API or microservice clients.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto.Id">
+            <summary>
+            Gets or sets the Vehicle Id.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto.Model">
+            <summary>
+            Gets or sets the Vehicle Model.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto.Plate">
+            <summary>
+            Gets or sets the Vehicle Plate.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto.ManufactureDate">
+            <summary>
+            Gets or sets the Vehicle Manufacture Date.
+            Only vehicles with a maximum age of 5 years are allowed.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto">
+            <summary>
+            Data Transfer Object (DTO) to rent or return a vehicle.
+            Contains both the vehicle identifier and the user's DNI.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto.Id">
+            <summary>
+            Gets or sets the unique rental identifier.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto.VehicleId">
+            <summary>
+            Gets or sets the vehicle being rented.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto.Dni">
+            <summary>
+            Gets or sets the user identifier (DNI) renting the vehicle.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto.RentDate">
+            <summary>
+            Gets or sets the date and time when the vehicle was rented.
+            </summary>
+        </member>
+        <member name="P:GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto.ReturnDate">
+            <summary>
+            Gets or sets the date and time when the vehicle was returned. Null by default, indicating the vehicle is still rented.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "3SiwXDYFD9SvTQ8XJ3uG6Do0YLLOBFcpERepIKh8ws4=",
+  "Source": "GtMotive.Estimate.Microservice.Host",
+  "BasePath": "_content/GtMotive.Estimate.Microservice.Host",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

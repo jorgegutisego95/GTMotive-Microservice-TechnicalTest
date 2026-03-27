@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\GtMotive.Estimate.Microservice.Host.props" />
+</Project>

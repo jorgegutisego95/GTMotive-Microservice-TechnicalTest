@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GtMotive.Estimate.Microservice.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:GtMotive.Estimate.Microservice.Domain.DomainException">
+            <summary>
+            Domain Exception.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.DomainException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.Domain.DomainException"/> class.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.DomainException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.Domain.DomainException"/> class.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.DomainException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GtMotive.Estimate.Microservice.Domain.DomainException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Domain.Interfaces.IAppLogger`1">
+            <summary>
+            This type eliminates the need to depend directly on the ASP.NET Core logging types.
+            </summary>
+            <typeparam name="T">The type who's name is used for the logger category name.</typeparam>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IAppLogger`1.LogInformation(System.String,System.Object[])">
+            <summary>
+            Formats and writes an informational log message.
+            </summary>
+            <param name="message">Format string of the log message in message template format. Example: "User {User}
+            logged in from {Address}".</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IAppLogger`1.LogWarning(System.String,System.Object[])">
+            <summary>
+            Formats and writes a warning log message.
+            </summary>
+            <param name="message">Format string of the log message in message template format. Example: "User {User}
+            logged in from {Address}".</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IAppLogger`1.LogError(System.Exception,System.String,System.Object[])">
+            <summary>
+            Formats and writes a error log message.
+            </summary>
+            <param name="exception">Exception captured.</param>
+            <param name="message">Format string of the log message in message template format. Example: "User {User}
+            logged in from {Address}".</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IAppLogger`1.LogDebug(System.String,System.Object[])">
+            <summary>
+            Formats and writes a debug log message.
+            </summary>
+            <param name="message">Format string of the log message in message template format. Example: "User {User}
+            logged in from {Address}".</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Domain.Interfaces.IAuthorizationService">
+            <summary>
+            Checks policy based permissions for a user.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IAuthorizationService.Authorize(System.Security.Claims.ClaimsPrincipal,System.Object,System.String)">
+            <summary>
+            Checks if a user meets a specific authorization policy.
+            </summary>
+            <param name="user">The user to check the policy against.</param>
+            <param name="resource">An optional resource the policy should be checked with. If a resource is not required for policy evaluation you may pass null as the value.</param>
+            <param name="policyName">The name of the policy to check against a specific context.</param>
+            <returns>Indicates whether the user, and optional resource has fulfilled the policy. True when the policy has been fulfilled otherwise false.</returns>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Domain.Interfaces.IBus">
+            <summary>
+            Bus API.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IBus.Send(System.Object)">
+            <summary>
+            Sends a message on the queue/topic associated to this client.
+            </summary>
+            <param name="message">Message.</param>
+            <returns>A task to be resolved on when the operation has completed.</returns>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Domain.Interfaces.IBusFactory">
+            <summary>
+            Bus Factory.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IBusFactory.GetClient(System.Type)">
+            <summary>
+            Gets a bus client for an event type.
+            </summary>
+            <param name="eventType">Event type.</param>
+            <returns>Bus client.</returns>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Domain.Interfaces.ITelemetry">
+            <summary>
+            Send events, metrics and other telemetry.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.ITelemetry.TrackEvent(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.Double})">
+            <summary>
+            User actions and other events. Used to track user behavior or to monitor performance.
+            Insert TrackEvent calls in your code to count various events. How often users choose a particular feature,
+            how often they achieve particular goals, or maybe how often they make particular types of mistakes.
+            </summary>
+            <param name="eventName">A name for the event. Max length 150.</param>
+            <param name="properties">Named string values you can use to search and filter events.</param>
+            <param name="metrics">Numeric measurements associated with this event.</param>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.ITelemetry.TrackMetric(System.String,System.Double,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Performance measurements such as queue lengths not related to specific events.
+            For get chart metrics that are not attached to particular events. For example, you could monitor a queue length
+            at regular intervals. With metrics, the individual measurements are of less interest than the variations and trends,
+            and so statistical charts are useful.
+            </summary>
+            <param name="name">The name of the metric. Max length 150.</param>
+            <param name="value">he value of the metric. Sum if based on more than one sample count.</param>
+            <param name="properties">Named string values you can use to search and classify trace messages.</param>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.Domain.Interfaces.IUnitOfWork">
+            <summary>
+            Unit Of Work. Should only be used by Use Cases.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.Domain.Interfaces.IUnitOfWork.Save">
+            <summary>
+            Applies all database changes.
+            </summary>
+            <returns>Number of affected rows.</returns>
+        </member>
+    </members>
+</doc>

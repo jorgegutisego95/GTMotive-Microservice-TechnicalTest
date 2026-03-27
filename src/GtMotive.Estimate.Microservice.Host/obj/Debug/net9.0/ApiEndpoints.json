@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "GtMotive.Estimate.Microservice.Api.Controllers.VehicleController",
+    "Method": "Create",
+    "RelativePath": "api/vehicle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GtMotive.Estimate.Microservice.Api.Dtos.VehicleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GtMotive.Estimate.Microservice.Api.Controllers.VehicleRentalController",
+    "Method": "GetVehicleAvailables",
+    "RelativePath": "api/vehicleRental/getAvailables",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GtMotive.Estimate.Microservice.Api.Controllers.VehicleRentalController",
+    "Method": "RentVehicle",
+    "RelativePath": "api/vehicleRental/rent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GtMotive.Estimate.Microservice.Api.Controllers.VehicleRentalController",
+    "Method": "ReturnVehicle",
+    "RelativePath": "api/vehicleRental/return",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GtMotive.Estimate.Microservice.Api.Dtos.VehicleRentalDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

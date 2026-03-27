@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GtMotive.Estimate.Microservice.InfrastructureTests</name>
+    </assembly>
+    <members>
+        <member name="T:GtMotive.Estimate.Microservice.InfrastructureTests.Vehicle.Fakes.InMemoryVehicleRepository">
+            <summary>
+            In-memory implementation of IVehicleRepository for integration tests.
+            </summary>
+        </member>
+        <member name="T:GtMotive.Estimate.Microservice.InfrastructureTests.Vehicle.Controllers.VehicleControllerTests">
+            <summary>
+            Infrastructure-level tests for <see cref="T:GtMotive.Estimate.Microservice.Api.Controllers.VehicleController"/>.
+            Focuses on request reception and model validation at the host level.
+            </summary>
+        </member>
+        <member name="M:GtMotive.Estimate.Microservice.InfrastructureTests.Infrastructure.GenericInfrastructureTestServerFixture.Dispose">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
